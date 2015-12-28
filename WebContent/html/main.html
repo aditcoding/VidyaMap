@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>VidyaMap</title>
+<link rel="stylesheet" type="text/css" href="../css/vizStyle.css">
+<link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css" href="../css/jquery-ui-1.11.4.min.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+</head>
+
+<body>
+  <!-- Code block start - NT --> 
+  <div class="topbar">
+    <div class="topbarleft">      
+      <div class="searchbarleft">
+        <p>VidyaMap</p>
+      </div>      
+      <div class="searchbarright">
+        <input type="text" id="box" name="fname" size="50">
+      </div>
+    </div>
+    <div class="topbarright">
+      <div class="topbarleft">
+        <!-- <table class="dropdown" width="150">
+          <tr>
+            <td class="menuNormal" id= "menuNormal" onmouseover="expand(this)" onmouseout="collapse(this)">
+              <p id="subject">Subject</p>
+              <div class="menuNormal" width="245">
+                <table class="menu" width="245">
+                  <tr>
+                    <td><a class="menuitem"> <span id="biology">Biology</span>
+                    </a></td>
+                  </tr>
+                  <tr>
+                    <td><a class="menuitem"> <span id="physics">Physics</span>
+                    </a></td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+			
+            <td class="menuNormal" onmouseover="expand(this)"
+              onmouseout="collapse(this)">
+              <p>Topic</p>
+              <div class="menuNormal" width="245">
+                <table class="menu" width="245">
+                  <tr>
+                    <td><a onclick="getentity(this)"
+                      class="menuitem" value="Compost Temperature Experiment">Compost Temperature Experiment</a></td>
+                  </tr>
+                  <tr><td>
+                    <a class="menuitem" value="Compost moisture Experiment">Compost moisture experiment</a>
+                  </td></tr>
+                  <tr><td>
+                    <a class="menuitem" value="Compost aeration Experiment">Compost aeration experiment</a>
+                  </td></tr>
+                  <tr><td>
+                    <a class="menuitem" value="Ecosystem">Ecosystem</a>
+                  </td></tr>
+                  <tr><td>
+                    <a class="menuitem" value="Understanding decomposition">Understanding decomposition</a>
+                                    </td></tr>
+                  <tr><td>
+                    <a class="menuitem" value="Food Web">Food Web</a>
+                  </td></tr>
+                  <tr><td>
+                    <a class="menuitem" value="Energy transformation">Energy transformation</a>
+                  </td></tr>
+                </table>
+              </div>
+            </td>
+            
+          </tr>
+        </table> -->
+      </div>
+      <div class="topbarright"> 
+      	<a href='/VidyaMap/r/signout' style='color:white;'>SignOut</a>
+      	<!-- <ul class="mylearning">
+		  <li><a >MyLearnings</a></li>
+		</ul> -->	 
+		<!-- <div class="username"><p>$.session.get('username')</p></div> -->     
+      </div>
+    </div>
+  </div>
+  <!-- Code for second bar is removed-->
+
+  <!--  code block end - NT-->
+
+  <div class="mainDiv">
+  	  <div class="background" id="background"></div>
+	  <div class="textField" id="textDivField">
+	  </div>
+  </div>
+  
+<script type="text/javascript" src="../js/d3.min.js"></script>
+<script type="text/javascript" src="../js/fisheye.js"></script>
+<script type="text/javascript" src="../js/menu.js"></script>
+<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.11.4.min.js"></script>
+<script type="text/javascript" src="../js/autocomplete.js"></script>
+<script type="text/javascript" src="../js/vidyaMap.js"></script>  
+
+</body>
+</html>

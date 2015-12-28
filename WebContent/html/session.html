@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+	<title>VidyaMap</title>
+	<link type="text/css" rel="stylesheet" href="../css/signup.css"/>
+	<style>
+		#subject-form { overflow:hidden }
+		.selectSubject { float:left; clear:none; }
+		label { float:left; clear:none; display:block; padding: 2px 1em 0 0; }
+		input[type=radio]{ float:left; clear:none; margin: 2px 0 0 2px; width: auto;}
+	</style>
+</head>
+<body>
+	
+	<script>
+		var sessionAttrs = {};
+		$(document).ready(function(){
+			getSessionAttrs();
+			var userType = sessionAttrs.userType;
+			var textDisplay = 'Welcome ';
+			if(userType != null){
+				if(userType === 'group'){
+					textDisplay = textDisplay + sessionAttrs.userName;
+				} else {
+					textDisplay = textDisplay + sessionAttrs.firstName;
+				}
+			}
+			$('#welcome').text(textDisplay);
+			
+		});
+		
+		function getSessionAttrs(){
+			console.log("Getting session attrs");
+			$.ajax({
+				url : '/VidyaMap/r/getSessionAttrs',
+				type : 'GET',
+				//dataType : 'application/json',
+				async : false,
+				success : function(data) {
+					sessionAttrs = $.parseJSON(data);
+				},
+				failure : function(emsg) {
+					alert("Error:::" + emsg);
+				}
+			});
+		}
+	</script>
+
+	<div>         
+           <div>
+           	<p id="welcome"> Welcome </p>
+           	<a href='/VidyaMap/r/signout' style="float:right">SignOut</a>
+           </div>
+            <form id="subject-form" action="/VidyaMap/r/subject" method="post">
+               <p>Select subject you are working on today</p>
+	           <div class=selectSubject>
+	             <input type="radio" name="subject" id="physics" value="physics"><label for="physics">Physics</label>              
+	             <input type="radio" name="subject" id="biology" value="biology" checked="checked"><label for="biology">Biology</label>
+	           </div>
+	           <div>
+	             <input type="submit" value="Continue" id="continue" class="button"/>
+	           </div>
+           </form>
+       </div>
+</body>
+</html>

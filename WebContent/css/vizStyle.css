@@ -1,0 +1,98 @@
+// Nodes
+.node text {
+  font: 10px sans-serif;
+  pointer-events: none;
+  text-anchor: middle;
+  color: black;
+  cursor: pointer;
+}
+
+g text {
+  cursor: pointer;
+}
+
+.link text {
+  font: 10px sans-serif;
+  pointer-events: none;
+  text-anchor: middle;
+  color: black;
+}
+
+.node circle{
+  cursor: pointer;
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.node rect{
+  cursor: pointer;
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+// Vizualization and Text
+.mainDiv{
+  height: relative;  
+}
+
+:root{
+	background: 900px;
+}
+
+.background{
+  background-color: rgb(240,240,240);
+  width : 50%;
+  //border: 1px solid green;
+  height: 100vh;
+  float: left;
+  margin: 0;
+}
+
+.textField {
+	background-color : rgb(240,240,240);
+	//border: 1px solid black;
+	float: left;
+	width: 47.5%;
+	height: 100vh;
+	padding: 1%;
+}
+
+// Links
+.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+
+.link text {
+  font: 10px sans-serif;
+  pointer-events: none;
+  text-anchor: middle;
+  color: black;
+}
+
+.linklabel {
+  background-color: #ddd;
+  border-top: 20px solid transparent;
+  border-right: 20px solid #ddd;
+  display: inline-block;
+  color: #888;
+  font-family: sans-serif;
+  font-size: smaller;
+  padding: 10px;
+  width: 150px;
+}
+
+.linklabel::after {
+  border-top: 20px solid transparent;
+  border-right: 20px solid #ddd;
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+}
+
+.highlightSpan {
+	text-decoration: underline;
+	cursor : pointer;
+	color : blue;
+}

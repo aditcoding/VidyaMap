@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- General meta information -->
+      <title>VidyaMap</title>
+      <meta name="keywords" content="" />
+      <meta name="description" content="" />
+      <meta name="robots" content="index, follow" />
+      <meta charset="utf-8" />
+      <!-- // General meta information -->
+      
+      
+      <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+      <script>
+		var sessionAttrs = {};
+		$(document).ready(function(){
+			getSessionAttrs();
+			var userName = sessionAttrs.userName;
+			if(userName != null){
+				window.location = 'html/signup.html';
+			}
+		});
+		
+		function getSessionAttrs(){
+			console.log("Getting session attrs");
+			$.ajax({
+				url : '/VidyaMap/r/getSessionAttrs',
+				type : 'GET',
+				//dataType : 'application/json',
+				async : false,
+				success : function(data) {
+					sessionAttrs = $.parseJSON(data);
+				},
+				failure : function(emsg) {
+					alert("Error:::" + emsg);
+				}
+			});
+		}
+	</script>
+      
+      <link type="text/css" rel="stylesheet" href="css/login.css"/>
+   </head>
+   
+   <body>
+      <div class="main">
+         <h3>VidyaMap Login</h3>
+         <form id="signin" action="r/signin" method="post">
+            <div>
+               <label for="username">Username</label>
+               <input type="text" name="username" id="username" placeholder="Username" required/> 
+            </div>
+            <div>             
+               <label for="password">Password</label>
+               <input type="password" name="password" id="password" placeholder="Password" required/>
+            </div>
+            <div>
+               <input type="submit" id="submit1" value="Sign In"/>
+            </div>
+         </form>
+      </div>
+   </body>
+</html>

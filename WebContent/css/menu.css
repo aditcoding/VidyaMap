@@ -1,0 +1,219 @@
+body{
+	margin:0px;
+}
+
+.topbar{
+	padding-top:0px;
+	width:100%;
+	height:25px;
+	padding:0;
+	background-color:rgb(52, 152, 219);
+}
+
+.topbarleft{
+	width:50%;
+	//height:relative;
+	float:left;
+	padding:0;
+	background-color:rgb(52, 152, 219);
+}
+
+.topbarleft p{	
+	margin-top:0;
+	margin-bottom:0;
+}
+
+.topbarright{
+	padding-top:0px;
+	width:50%;
+	//height:relative;
+	float:left;
+	padding:0;
+	background-color:rgb(52, 152, 219);
+	display:inline;
+}
+
+.topbarmenu{
+	background-color:rgb(52, 152, 219);
+    text-decoration: none;
+	margin-top:0;
+	margin-bottom:0;
+	float:right;
+}
+
+.topbarmenu li{
+	display:inline;
+}
+
+.topbarmenu li a{
+    color: white;
+	width:relative;
+	//height:auto;
+	vertical-align:top;
+	position:relative;
+    padding:5px 10px 0px 10px;
+    text-decoration: none;
+}
+
+.topbarmenu li a:hover{
+    background-color: rgb(41, 128, 185);	
+}
+
+//Search Bar properties
+.searchbar{
+	padding-top:0px;
+	width:100%;
+	//height:relative;
+	padding:0;
+}
+
+.searchbarleft{
+	width:50%;
+	//height:relative;
+	float:left;
+	padding:0;
+	color:white;
+	background-color:rgb(52, 152, 219);
+}
+
+.searchbarright{
+	width:50%;
+	//height:relative;
+	float:left;
+	padding:0;
+	background-color:rgb(52, 152, 219);
+}
+
+.mapsearch{
+	width:100%;
+}
+
+.searchbarmenu{
+	background-color:rgb(41, 128, 185);
+    text-decoration: none;
+	margin-top:0;
+	padding-left:0;
+	margin-bottom:0;
+}
+
+.searchbarmenu li{
+	display:inline;
+	float:relative;
+}
+
+.searchbarmenu li a{
+    color: white;
+	width:relative;
+	//height:auto;
+	vertical-align:top;
+	position:relative;
+    padding:5px 10px;
+    text-decoration: none;
+}
+/*
+.searchbarmenu li a:hover{
+    background-color: rgb(52, 152, 219);
+} */
+
+//Hovering menu styling
+p{
+	padding-top: 0px;
+	margin: 0px;
+	color:white;
+}
+
+table.dropdown{
+	margin: 0px;
+	padding: 0px; 
+	border: 0px; 
+	margin-top:0;
+	margin-bottom:0;
+}
+
+table.menu{
+	margin: 0px;
+	padding: 0px;
+}
+
+td.menuNormal{
+	padding: 0px;
+	color: white;
+	vertical-align: top;
+	background-color: rgb(52, 152, 219);
+}
+
+td.menuHover{
+	padding: 0px;
+	color: white;
+	vertical-align: top;
+	background-color: rgb(41, 128, 185);
+}
+
+div.menuNormal{
+	display: none;
+	position:static;
+}
+
+div.menuHover{
+	background-color:rgb(52, 152, 219);
+	display: inline;
+	position: absolute;
+}
+
+a.menuitem:link{
+	text-decoration: none;
+	color: white;
+	background-color:rgb(41, 128, 185);
+	display: block;
+}
+
+a.menuitem:visited{
+	text-decoration: none;
+	color: white;
+	background-color:rgb(41, 128, 185);
+	display: block;
+}
+
+a.menuitem:hover{
+	text-decoration: none;
+	color: white;
+	background-color: rgb(41, 128, 185);
+	display: block;
+}
+
+a.menuitem:active{
+	text-decoration: none;
+	color: white;
+	background-color: rgb(41, 128, 185);
+	display: block;
+}
+
+// MyLearning tool bar styling
+
+.mylearning {
+    list-style-type: none;
+    margin: 0;
+    margin-top:0px;
+    margin-bottom:0px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.mylearning li {
+    float: left;
+    display: inline;
+}
+
+.mylearning a:link, a:visited {
+    display: block;
+    width: 120px;
+    color: white;
+    background-color: rgb(52, 152, 219);
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+}
+
+.mylearning a:hover, a:active {
+    background-color: rgb(41, 128, 185);
+}

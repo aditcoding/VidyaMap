@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script src="../jquery-1.11.2.min.js"></script>
+    <script src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="../css/tabs.css">
+    <script src="../js/visit_count_histogram_data.js"></script>
+    <script src="../js/concept_jump_data.js"></script>
+    <script src="../js/concept_topic_visit_count_data.js"></script>
+    <script src="../js/myLearnings.js"></script>
+
+    <script src="../d3.min.js"></script>
+    <script src="../js/heatmap.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/heatmap.css">
+    <script src="../js/barchart.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/barchart.css">
+  
+    <style>
+    body {
+      padding-bottom: 300px;
+    }
+    </style>
+  </head>
+
+  <body onload="init()">
+
+  <h1>MyLearnings Initial Draft</h1>
+
+  <p /><p />
+  <hr noshade size=12> 
+  
+  <p><h3>Visit History</h3></p>
+  <p />
+  <div id="visit_table"></div>
+
+  <p><h3>Histogram of visit count</h3></p>
+  <p />
+  <div id="hist_table"></div>
+  <div id="hist_vis" style='overflow:auto; width="100%"; height=100%;'>
+  </div>
+
+  <p /><p />
+  <hr noshade size=12> 
+
+  <p><h3>Concept to concept jump heatmap</h3></p>
+  <p />
+  <div id="heatmap_table"></div>
+  <div id="heatmap_vis" style='overflow:auto; width="100%"; height=100%;'>
+  </div>
+
+  </body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+	<!-- General meta information -->
+	<title>VidyaMap</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<!-- // General meta information -->
+	
+	
+	<!-- Load Javascript -->
+	<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui-1.11.4.min.js"></script>
+	<script type="text/javascript" src="../js/chosen.jquery.min.js"></script>
+	<script type="text/javascript" src="../js/signup.js"></script>
+	<!-- // Load Javascipt -->
+
+	<!-- Load stylesheets -->
+	<link type="text/css" rel="stylesheet" href="../css/signup.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/chosen.min.css"/>
+	<!-- // Load stylesheets -->
+	
+
+	<script>
+	</script>
+	
+</head>
+<body>
+
+      <div class="one">
+      <div>
+      <label for="mySelect">Add account</label>
+       <select name="mySelect" id="mySelect">
+            <option value="NoValue">Select Type</option>
+          	<option value="school">School</option>
+          	<option value="teacher">Teacher</option>          	
+          	<option value="student">Student</option>         	
+          	<option value="class">Class</option>           	
+          	<option value="term">Term</option>            	
+          	<option value="group">Group</option>
+          	<option value="admin">Admin</option>           	
+          	<option value="guest">Guest</option>            	
+          	<option value="researcher">Researcher</option>
+        </select>
+        	<span> or </span>  
+          <button type="button" onclick="window.location ='session.html'">Go to main</button>
+          <a href='/VidyaMap/r/signout' style="float:right">SignOut</a>
+        </div>
+        
+        <div class="admin register">         
+          <form id="reg-form" action="/VidyaMap/r/admin" method="post">
+            <div>
+              <label for="firstname">First Name</label>
+              <input type="text" name="firstname" id="firstname" spellcheck="false" placeholder="First Name" required/> 
+            </div>            
+            <div>
+              <label for="lastname">Last Name</label>
+              <input type="text" name="lastname" id="lastname" spellcheck="false" placeholder="Last Name" required/> 
+            </div>
+            <div>
+              <label for="username">Username</label>
+              <input type="text" name="username" id="username" onchange="checkUserNameExists(this)" spellcheck="false" placeholder="username" required/>
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input name="password" type="password" id="password" />
+            </div>
+            <div>
+              <label for="password-again">Password Again</label>
+              <input type="password" id="password-again" oninput="match(this, 'admin')"/>
+            </div>
+            <div>
+              <label></label>
+              <input type="submit" value="Create Account" id="create-account" class="button"/>
+            </div>
+          </form>
+        </div>
+        
+        <div class="guest register">         
+          <form id="reg-form" action="/VidyaMap/r/guest" method="post">
+            <div>
+              <label for="firstname">First Name</label>
+              <input type="text" name="firstname" id="firstname" spellcheck="false" placeholder="First Name" required/> 
+            </div>            
+            <div>
+              <label for="lastname">Last Name</label>
+              <input type="text" name="lastname" id="lastname" spellcheck="false" placeholder="Last Name" required/> 
+            </div>
+            <div>
+              <label for="username">Username</label>
+              <input type="text" name="username" id="username" onchange="checkUserNameExists(this)" spellcheck="false" placeholder="username" required/>
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input name="password" type="password" id="password" />
+            </div>
+            <div>
+              <label for="password-again">Password Again</label>
+              <input type="password" id="password-again" oninput="match(this, 'guest')"/>
+            </div>
+            <div>
+              <label></label>
+              <input type="submit" value="Create Account" id="create-account" class="button"/>
+            </div>
+          </form>
+        </div>
+        
+        <div class="researcher register">         
+          <form id="reg-form" action="/VidyaMap/r/researcher" method="post">
+            <div>
+              <label for="firstname">First Name</label>
+              <input type="text" name="firstname" id="firstname" spellcheck="false" placeholder="First Name" required/> 
+            </div>            
+            <div>
+              <label for="lastname">Last Name</label>
+              <input type="text" name="lastname" id="lastname" spellcheck="false" placeholder="Last Name" required/> 
+            </div>
+            <div>
+              <label for="username">Username</label>
+              <input type="text" name="username" id="username" onchange="checkUserNameExists(this)" spellcheck="false" placeholder="username" required/>
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input name="password" type="password" id="password" />
+            </div>
+            <div>
+              <label for="password-again">Password Again</label>
+              <input type="password" id="password-again" oninput="match(this, 'researcher')"/>
+            </div>
+            <div>
+              <label></label>
+              <input type="submit" value="Create Account" id="create-account" class="button"/>
+            </div>
+          </form>
+        </div>
+        
+        <div class="school register">         
+          <form id="reg-form" action="/VidyaMap/r/school" method="post">
+            <div>
+              <label for="name">School Name</label>
+              <input type="text" name="name" id="name" spellcheck="false" placeholder="School Name" required/> 
+            </div>            
+            <div>
+              <label for="description">Description</label>
+              <input type="text" name="description" id="description" spellcheck="false" placeholder="any details"/> 
+            </div>
+            <div>             
+              <label for="state_name">State</label>
+              <input type="text" name="state_name" id="state_name" spellcheck="false" placeholder="State" required/>
+            </div>
+            <!-- <div>
+              <label for="district_id">District</label>
+              <input type="text" name="district_id" id="district_id" spellcheck="false" placeholder="district" required/>
+            </div> -->
+            <div>
+              <label></label>
+              <input type="submit" value="Create Account" id="create-account" class="button"/>
+            </div>
+          </form>
+        </div>
+        
+        <div class="teacher register">         
+          <form id="reg-form" action="/VidyaMap/r/teacher" method="post">
+            <div>
+              <label for="firstname">First Name</label>
+              <input type="text" name="firstname" id="firstname" spellcheck="false" placeholder="First Name" required/> 
+            </div>            
+            <div>
+              <label for="lastname">Last Name</label>
+              <input type="text" name="lastname" id="lastname" spellcheck="false" placeholder="Last Name" required/> 
+            </div>
+            <div>             
+              <label for="schoolSelect">School</label>
+              <select name="schoolSelect" id="schoolSelect" placeholder="Select school...">
+              </select>
+            </div>           
+            <div>
+              <label for="description">Description</label>
+              <input type="text" name="description" id="description" spellcheck="false" placeholder="any details"/> 
+            </div>
+            <div>
+              <label for="username">Username</label>
+              <input type="text" name="username" id="username" onchange="checkUserNameExists(this)" spellcheck="false" placeholder="username" required/>
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input name="password" type="password" id="password" />
+            </div>
+            <div>
+              <label for="password-again">Password Again</label>
+              <input type="password" id="password-again" oninput="match(this, 'teacher')"/>
+            </div>
+            <div>
+              <label></label>
+              <input type="submit" value="Create Account" id="create-account" class="button"/>
+            </div>
+          </form>
+        </div>   
+        
+        <div class="class register">         
+          <form id="reg-form" action="/VidyaMap/r/class" method="post">
+            <div>
+              <label for="name">Class Name</label>
+              <input type="text" name="name" id="name" spellcheck="false" placeholder="Class Name" required/> 
+            </div>  
+            <div>              
+              <label for="teacherSelect">Teacher</label>
+              <select name="teacherSelect" id="teacherSelect" placeholder="Select teacher...">
+              </select>
+            </div>          
+            <div>
+              <label for="description">Description</label>
+              <input type="text" name="description" id="description" spellcheck="false" placeholder="any details"/> 
+            </div>
+            <div>
+              <label></label>
+              <input type="submit" value="Create Account" id="create-account" class="button"/>
+            </div>
+          </form>
+        </div>
+        
+        <div class="term register">         
+          <form id="reg-form" action="/VidyaMap/r/term" method="post">
+            <div>
+	       	  <select name="term" id="term">
+	          	<option value="Fall2015">Fall 2015</option>
+	          	<option value="Spring2016">Spring 2016</option> 
+	          </select>    
+            </div>  
+            <div>
+              <label></label>
+              <input type="submit" value="Create Account" id="create-account" class="button"/>
+            </div>
+          </form>
+        </div>
+          
+        <div class="student register">         
+          <form id="reg-form" action="/VidyaMap/r/student" method="post">
+            <div>
+              <label for="firstname">First Name</label>
+              <input type="text" name="firstname" id="firstname" spellcheck="false" placeholder="First Name" required/>
+            </div>
+            <div>              
+              <label for="lastname">Last Name</label>
+              <input type="text" name="lastname" id="lastname" spellcheck="false" placeholder="Last Name" required/>
+            </div> 
+            <div>              
+              <label for="schoolSelect">School</label>
+              <select name="schoolSelect" id="schoolSelect" placeholder="Select school...">
+              </select>
+            </div>           
+            <div>
+              <label for="description">Description</label>
+              <input type="text" name="description" id="description" spellcheck="false" placeholder="any details"/> 
+            </div>
+            <div>
+              <label for="username">Username</label>
+              <input type="text" name="username" id="username" onchange="checkUserNameExists(this)" spellcheck="false" placeholder="username" required/>
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input name="password" type="password" id="password" />
+            </div>
+            <div>
+              <label for="password-again">Password Again</label>
+              <input type="password" id="password-again" oninput="match(this, 'student')"/>
+            </div>
+            <div>
+              <label for="log_consent">User activity logging allowed</label>
+              <input type="checkbox" name="log_consent" id="log_consent" value="yes"></input>
+            </div>     
+            <div>
+              <label></label>
+              <input type="submit" value="Create Account" id="create-account" class="button"/>
+            </div>
+          </form>
+        </div>        
+          
+        <div class="group register">         
+          <form id="reg-form" action="/VidyaMap/r/group" method="post">
+            <div>
+	       	  <label for="termSelect">Term</label>
+	       	  <select name="termSelect" id="termSelect" placeholder="Select term...">
+	          </select> 
+            </div>
+            <div>              
+              <label for="classSelect">Class</label>
+              <select name="classSelect" id="classSelect" placeholder="Select class...">
+              </select>
+            </div>         
+            <div>
+              <label for="description">Description</label>
+              <input type="text" name="description" id="description" spellcheck="false" placeholder="any details"/> 
+            </div>       
+            <div>              
+              <label for="studentSelect">Add Student</label>
+              <select class="chosen" multiple="true" style="width:300px;" name="studentSelect" id="studentSelect" placeholder="Select students...">
+              </select>
+             </div> 
+            <div>
+              <label for="groupname">Groupname</label>
+              <input type="text" name="groupname" id="groupname" onchange="checkUserNameExists(this)" spellcheck="false" placeholder="groupname" required/>
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input name="password" type="password" id="password" />
+            </div>
+            <div>
+              <label for="password-again">Password Again</label>
+              <input type="password" id="password-again" oninput="match(this, 'group')"/>
+            </div>            
+            <div>
+              <label for="log_consent">User activity logging allowed</label>
+              <input type="checkbox" name="log_consent" id="log_consent" value="yes"/>
+            </div>     
+            <div>
+              <label></label>
+              <input type="submit" value="Create Account" id="create-account" class="button"/>
+            </div>
+          </form>
+        </div>
+        
+      </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>VidyaMap</title>
+<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../js/chosen.jquery.min.js"></script>
+<link type="text/css" rel="stylesheet" href="../css/signup.css" />
+<link type="text/css" rel="stylesheet" href="../css/chosen.min.css" />
+</head>
+<body>
+	<div>
+		<div>
+           	<p id="welcome"> Welcome </p>
+           	<a href='/VidyaMap/r/signout' style="float:right">SignOut</a>
+         </div>
+		<form id="subject-form" action="/VidyaMap/r/setGroupInSession" method="post">
+			<p>Who is present today?</p>
+			<label for="studentSelect">Add Student</label> 
+			<select class="chosen"
+				multiple="true" style="width: 300px;" name="studentSelect"
+				id="studentSelect" placeholder="Select students...">
+			</select>
+			<div>
+	           <input type="submit" value="Continue" id="continue" class="button"/>
+	        </div>
+		</form>
+	</div>
+	
+	<script>
+		var sessionAttrs = {};
+		$(document).ready(function(){
+			getSessionAttrs();
+			var userType = sessionAttrs.userType;
+			var textDisplay = 'Welcome ';
+			if(userType != null){
+				textDisplay = textDisplay + sessionAttrs.userName;
+			}
+			$('#welcome').text(textDisplay);
+			
+		});
+		
+		function getSessionAttrs(){
+			console.log("Getting session attrs");
+			$.ajax({
+				url : '/VidyaMap/r/getSessionAttrs',
+				type : 'GET',
+				//dataType : 'application/json',
+				async : false,
+				success : function(data) {
+					sessionAttrs = $.parseJSON(data);
+				},
+				failure : function(emsg) {
+					alert("Error:::" + emsg);
+				}
+			});
+		}
+	</script>
+	
+	<script>
+	var students = [];
+	$(document).ready(function(){
+		 if(students.length == 0){
+	         $.ajax({
+	             url : "/VidyaMap/r/getStudentsInGroup",
+	             type : 'GET',
+	             success : function(data) {
+	                var options = $("#studentSelect");
+	                students = data.split(",");
+	                $.each(students, function(item) {
+	             	   var name = students[item].split(":")[0];
+	             	   var id = students[item].split(":")[1];
+	                    options.append($("<option />").val(name).text(name));
+	                });
+	                $(".chosen").chosen();
+	             },
+	             failure : function(emsg) {
+	                 alert("Error:::" + emsg);
+	             }
+	         });
+	     }
+	});
+	</script>
+
+</body>
+</html>
